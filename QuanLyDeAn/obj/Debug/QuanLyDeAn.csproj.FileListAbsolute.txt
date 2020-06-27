@@ -1,0 +1,40 @@
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\QuanLyDeAn.exe.config
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\QuanLyDeAn.exe
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.dll
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.xml
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csprojAssemblyReference.cache
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Properties.Resources.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmDeAn.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmGiaoVien.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmLogin.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmSinhVien.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmTienDo.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmMain.resources
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csproj.GenerateResource.cache
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csproj.CoreCompileInputs.cache
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csproj.CopyComplete
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.exe
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.pdb
+C:\Users\Christian Phan\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\QuanLyDeAn.pdb
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\QuanLyDeAn.exe.config
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\QuanLyDeAn.exe
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\QuanLyDeAn.pdb
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.dll
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.SqlServer.dll
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.xml
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\bin\Debug\EntityFramework.SqlServer.xml
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csprojAssemblyReference.cache
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Properties.Resources.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmDeAn.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmGiaoVien.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmLogin.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmSinhVien.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmTienDo.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.Views.frmMain.resources
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csproj.GenerateResource.cache
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csproj.CoreCompileInputs.cache
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.csproj.CopyComplete
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.exe
+F:\Downloads\Telegram Desktop\QuanLyDeAn\QuanLyDeAn\obj\Debug\QuanLyDeAn.pdb

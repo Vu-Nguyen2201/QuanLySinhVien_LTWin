@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBQuanLyDeAnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DeAn">
+          <Key>
+            <PropertyRef Name="IDDeAn" />
+          </Key>
+          <Property Name="IDDeAn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDeAn" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoaiDeAn" Type="nvarchar" MaxLength="100" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
+          <Property Name="IDNhom" Type="int" />
+          <Property Name="IDGiaoVien" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="GiaoVien">
+          <Key>
+            <PropertyRef Name="IDGiaoVien" />
+          </Key>
+          <Property Name="IDGiaoVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="100" />
+          <Property Name="pass" Type="varchar" MaxLength="100" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="BoMon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="char" MaxLength="100" />
+          <Property Name="SDT" Type="char" MaxLength="12" />
+          <Property Name="GioiTinh" Type="nchar" MaxLength="10" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="ad" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="Nhom">
+          <Key>
+            <PropertyRef Name="IDNhom" />
+          </Key>
+          <Property Name="IDNhom" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenNhom" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="IDSinhVien" />
+          </Key>
+          <Property Name="IDSinhVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="MSSV" Type="char" MaxLength="50" />
+          <Property Name="Email" Type="char" MaxLength="100" />
+          <Property Name="SDT" Type="char" MaxLength="12" />
+          <Property Name="GioiTinh" Type="nchar" MaxLength="10" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="IDNhom" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="TienDo">
+          <Key>
+            <PropertyRef Name="IDTienDo" />
+          </Key>
+          <Property Name="IDTienDo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
+          <Property Name="HoanThanh" Type="int" />
+          <Property Name="TaiLieuBaoCao" Type="nvarchar" MaxLength="500" />
+          <Property Name="ThoiGianBaoCao" Type="datetime" />
+          <Property Name="NhanXet" Type="nvarchar" MaxLength="500" />
+          <Property Name="IDDeAn" Type="int" />
+          <Property Name="IDSinhVien" Type="int" />
+          <Property Name="IDNhom" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <Association Name="FK__DeAn__IDGiaoVien__3E52440B">
+          <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiaoVien">
+              <PropertyRef Name="IDGiaoVien" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="IDGiaoVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DeAn__IDNhom__3D5E1FD2">
+          <End Role="Nhom" Type="Self.Nhom" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhom">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="IDNhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SinhVien__IDNhom__38996AB5">
+          <End Role="Nhom" Type="Self.Nhom" Multiplicity="0..1" />
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhom">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="SinhVien">
+              <PropertyRef Name="IDNhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TienDo__IDDeAn__412EB0B6">
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="0..1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeAn">
+              <PropertyRef Name="IDDeAn" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDDeAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TienDo__IDNhom__4316F928">
+          <End Role="Nhom" Type="Self.Nhom" Multiplicity="0..1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhom">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDNhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TienDo__IDSinhVi__4222D4EF">
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SinhVien">
+              <PropertyRef Name="IDSinhVien" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDSinhVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBQuanLyDeAnModelStoreContainer">
+          <EntitySet Name="DeAn" EntityType="Self.DeAn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiaoVien" EntityType="Self.GiaoVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nhom" EntityType="Self.Nhom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TienDo" EntityType="Self.TienDo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DeAn__IDGiaoVien__3E52440B" Association="Self.FK__DeAn__IDGiaoVien__3E52440B">
+            <End Role="GiaoVien" EntitySet="GiaoVien" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DeAn__IDNhom__3D5E1FD2" Association="Self.FK__DeAn__IDNhom__3D5E1FD2">
+            <End Role="Nhom" EntitySet="Nhom" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SinhVien__IDNhom__38996AB5" Association="Self.FK__SinhVien__IDNhom__38996AB5">
+            <End Role="Nhom" EntitySet="Nhom" />
+            <End Role="SinhVien" EntitySet="SinhVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TienDo__IDDeAn__412EB0B6" Association="Self.FK__TienDo__IDDeAn__412EB0B6">
+            <End Role="DeAn" EntitySet="DeAn" />
+            <End Role="TienDo" EntitySet="TienDo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TienDo__IDNhom__4316F928" Association="Self.FK__TienDo__IDNhom__4316F928">
+            <End Role="Nhom" EntitySet="Nhom" />
+            <End Role="TienDo" EntitySet="TienDo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TienDo__IDSinhVi__4222D4EF" Association="Self.FK__TienDo__IDSinhVi__4222D4EF">
+            <End Role="SinhVien" EntitySet="SinhVien" />
+            <End Role="TienDo" EntitySet="TienDo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBQuanLyDeAnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DeAn">
+          <Key>
+            <PropertyRef Name="IDDeAn" />
+          </Key>
+          <Property Name="IDDeAn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDeAn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiDeAn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IDNhom" Type="Int32" />
+          <Property Name="IDGiaoVien" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="GiaoVien" Relationship="Self.FK__DeAn__IDGiaoVien__3E52440B" FromRole="DeAn" ToRole="GiaoVien" />
+          <NavigationProperty Name="Nhom" Relationship="Self.FK__DeAn__IDNhom__3D5E1FD2" FromRole="DeAn" ToRole="Nhom" />
+          <NavigationProperty Name="TienDoes" Relationship="Self.FK__TienDo__IDDeAn__412EB0B6" FromRole="DeAn" ToRole="TienDo" />
+        </EntityType>
+        <EntityType Name="GiaoVien">
+          <Key>
+            <PropertyRef Name="IDGiaoVien" />
+          </Key>
+          <Property Name="IDGiaoVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BoMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="ad" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK__DeAn__IDGiaoVien__3E52440B" FromRole="GiaoVien" ToRole="DeAn" />
+        </EntityType>
+        <EntityType Name="Nhom">
+          <Key>
+            <PropertyRef Name="IDNhom" />
+          </Key>
+          <Property Name="IDNhom" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNhom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK__DeAn__IDNhom__3D5E1FD2" FromRole="Nhom" ToRole="DeAn" />
+          <NavigationProperty Name="SinhViens" Relationship="Self.FK__SinhVien__IDNhom__38996AB5" FromRole="Nhom" ToRole="SinhVien" />
+          <NavigationProperty Name="TienDoes" Relationship="Self.FK__TienDo__IDNhom__4316F928" FromRole="Nhom" ToRole="TienDo" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="IDSinhVien" />
+          </Key>
+          <Property Name="IDSinhVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MSSV" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="IDNhom" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="Nhom" Relationship="Self.FK__SinhVien__IDNhom__38996AB5" FromRole="SinhVien" ToRole="Nhom" />
+          <NavigationProperty Name="TienDoes" Relationship="Self.FK__TienDo__IDSinhVi__4222D4EF" FromRole="SinhVien" ToRole="TienDo" />
+        </EntityType>
+        <EntityType Name="TienDo">
+          <Key>
+            <PropertyRef Name="IDTienDo" />
+          </Key>
+          <Property Name="IDTienDo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HoanThanh" Type="Int32" />
+          <Property Name="TaiLieuBaoCao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianBaoCao" Type="DateTime" Precision="3" />
+          <Property Name="NhanXet" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IDDeAn" Type="Int32" />
+          <Property Name="IDSinhVien" Type="Int32" />
+          <Property Name="IDNhom" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="DeAn" Relationship="Self.FK__TienDo__IDDeAn__412EB0B6" FromRole="TienDo" ToRole="DeAn" />
+          <NavigationProperty Name="Nhom" Relationship="Self.FK__TienDo__IDNhom__4316F928" FromRole="TienDo" ToRole="Nhom" />
+          <NavigationProperty Name="SinhVien" Relationship="Self.FK__TienDo__IDSinhVi__4222D4EF" FromRole="TienDo" ToRole="SinhVien" />
+        </EntityType>
+        <Association Name="FK__DeAn__IDGiaoVien__3E52440B">
+          <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiaoVien">
+              <PropertyRef Name="IDGiaoVien" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="IDGiaoVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DeAn__IDNhom__3D5E1FD2">
+          <End Role="Nhom" Type="Self.Nhom" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhom">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="IDNhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TienDo__IDDeAn__412EB0B6">
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="0..1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeAn">
+              <PropertyRef Name="IDDeAn" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDDeAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SinhVien__IDNhom__38996AB5">
+          <End Role="Nhom" Type="Self.Nhom" Multiplicity="0..1" />
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhom">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="SinhVien">
+              <PropertyRef Name="IDNhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TienDo__IDNhom__4316F928">
+          <End Role="Nhom" Type="Self.Nhom" Multiplicity="0..1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhom">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDNhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TienDo__IDSinhVi__4222D4EF">
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SinhVien">
+              <PropertyRef Name="IDSinhVien" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDSinhVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBQuanLyDeAnEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DeAns" EntityType="Self.DeAn" />
+          <EntitySet Name="GiaoViens" EntityType="Self.GiaoVien" />
+          <EntitySet Name="Nhoms" EntityType="Self.Nhom" />
+          <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
+          <EntitySet Name="TienDoes" EntityType="Self.TienDo" />
+          <AssociationSet Name="FK__DeAn__IDGiaoVien__3E52440B" Association="Self.FK__DeAn__IDGiaoVien__3E52440B">
+            <End Role="GiaoVien" EntitySet="GiaoViens" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DeAn__IDNhom__3D5E1FD2" Association="Self.FK__DeAn__IDNhom__3D5E1FD2">
+            <End Role="Nhom" EntitySet="Nhoms" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TienDo__IDDeAn__412EB0B6" Association="Self.FK__TienDo__IDDeAn__412EB0B6">
+            <End Role="DeAn" EntitySet="DeAns" />
+            <End Role="TienDo" EntitySet="TienDoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SinhVien__IDNhom__38996AB5" Association="Self.FK__SinhVien__IDNhom__38996AB5">
+            <End Role="Nhom" EntitySet="Nhoms" />
+            <End Role="SinhVien" EntitySet="SinhViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TienDo__IDNhom__4316F928" Association="Self.FK__TienDo__IDNhom__4316F928">
+            <End Role="Nhom" EntitySet="Nhoms" />
+            <End Role="TienDo" EntitySet="TienDoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TienDo__IDSinhVi__4222D4EF" Association="Self.FK__TienDo__IDSinhVi__4222D4EF">
+            <End Role="SinhVien" EntitySet="SinhViens" />
+            <End Role="TienDo" EntitySet="TienDoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBQuanLyDeAnModelStoreContainer" CdmEntityContainer="DBQuanLyDeAnEntities">
+          <EntitySetMapping Name="DeAns">
+            <EntityTypeMapping TypeName="DBQuanLyDeAnModel.DeAn">
+              <MappingFragment StoreEntitySet="DeAn">
+                <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+                <ScalarProperty Name="TenDeAn" ColumnName="TenDeAn" />
+                <ScalarProperty Name="LoaiDeAn" ColumnName="LoaiDeAn" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+                <ScalarProperty Name="IDGiaoVien" ColumnName="IDGiaoVien" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiaoViens">
+            <EntityTypeMapping TypeName="DBQuanLyDeAnModel.GiaoVien">
+              <MappingFragment StoreEntitySet="GiaoVien">
+                <ScalarProperty Name="IDGiaoVien" ColumnName="IDGiaoVien" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="BoMon" ColumnName="BoMon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nhoms">
+            <EntityTypeMapping TypeName="DBQuanLyDeAnModel.Nhom">
+              <MappingFragment StoreEntitySet="Nhom">
+                <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+                <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinhViens">
+            <EntityTypeMapping TypeName="DBQuanLyDeAnModel.SinhVien">
+              <MappingFragment StoreEntitySet="SinhVien">
+                <ScalarProperty Name="IDSinhVien" ColumnName="IDSinhVien" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MSSV" ColumnName="MSSV" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TienDoes">
+            <EntityTypeMapping TypeName="DBQuanLyDeAnModel.TienDo">
+              <MappingFragment StoreEntitySet="TienDo">
+                <ScalarProperty Name="IDTienDo" ColumnName="IDTienDo" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="TaiLieuBaoCao" ColumnName="TaiLieuBaoCao" />
+                <ScalarProperty Name="ThoiGianBaoCao" ColumnName="ThoiGianBaoCao" />
+                <ScalarProperty Name="NhanXet" ColumnName="NhanXet" />
+                <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+                <ScalarProperty Name="IDSinhVien" ColumnName="IDSinhVien" />
+                <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

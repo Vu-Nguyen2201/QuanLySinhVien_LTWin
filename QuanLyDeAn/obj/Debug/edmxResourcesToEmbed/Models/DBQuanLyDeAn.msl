@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBQuanLyDeAnModelStoreContainer" CdmEntityContainer="DBQuanLyDeAnEntities">
+    <EntitySetMapping Name="DeAns">
+      <EntityTypeMapping TypeName="DBQuanLyDeAnModel.DeAn">
+        <MappingFragment StoreEntitySet="DeAn">
+          <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+          <ScalarProperty Name="TenDeAn" ColumnName="TenDeAn" />
+          <ScalarProperty Name="LoaiDeAn" ColumnName="LoaiDeAn" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+          <ScalarProperty Name="IDGiaoVien" ColumnName="IDGiaoVien" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiaoViens">
+      <EntityTypeMapping TypeName="DBQuanLyDeAnModel.GiaoVien">
+        <MappingFragment StoreEntitySet="GiaoVien">
+          <ScalarProperty Name="IDGiaoVien" ColumnName="IDGiaoVien" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="BoMon" ColumnName="BoMon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nhoms">
+      <EntityTypeMapping TypeName="DBQuanLyDeAnModel.Nhom">
+        <MappingFragment StoreEntitySet="Nhom">
+          <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+          <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="DBQuanLyDeAnModel.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="IDSinhVien" ColumnName="IDSinhVien" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TienDoes">
+      <EntityTypeMapping TypeName="DBQuanLyDeAnModel.TienDo">
+        <MappingFragment StoreEntitySet="TienDo">
+          <ScalarProperty Name="IDTienDo" ColumnName="IDTienDo" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+          <ScalarProperty Name="TaiLieuBaoCao" ColumnName="TaiLieuBaoCao" />
+          <ScalarProperty Name="ThoiGianBaoCao" ColumnName="ThoiGianBaoCao" />
+          <ScalarProperty Name="NhanXet" ColumnName="NhanXet" />
+          <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+          <ScalarProperty Name="IDSinhVien" ColumnName="IDSinhVien" />
+          <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

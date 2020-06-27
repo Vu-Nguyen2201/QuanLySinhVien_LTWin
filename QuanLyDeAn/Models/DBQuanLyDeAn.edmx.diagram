@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4992e61d03f347deab26f51207f28b2c" Name="Diagram1">
+        <EntityTypeShape EntityType="DBQuanLyDeAnModel.DeAn" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBQuanLyDeAnModel.GiaoVien" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBQuanLyDeAnModel.Nhom" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBQuanLyDeAnModel.SinhVien" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBQuanLyDeAnModel.TienDo" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="DBQuanLyDeAnModel.FK__DeAn__IDGiaoVien__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBQuanLyDeAnModel.FK__DeAn__IDNhom__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DBQuanLyDeAnModel.FK__TienDo__IDDeAn__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="DBQuanLyDeAnModel.FK__SinhVien__IDNhom__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="DBQuanLyDeAnModel.FK__TienDo__IDNhom__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="DBQuanLyDeAnModel.FK__TienDo__IDSinhVi__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
